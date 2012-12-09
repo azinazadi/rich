@@ -1,3 +1,4 @@
+require 'mongoid'
 require 'cgi'
 require 'mime/types'
 require 'kaminari'
