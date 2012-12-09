@@ -490,9 +490,9 @@ a:hover.cke_colorauto,a:hover.cke_colormore,a:focus.cke_colorauto,a:focus.cke_co
 .cke_skin_kama .cke_browser_ie .cke_button .cke_buttonarrow {
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale');
 }
-.cke_skin_kama .cke_browser_ie6 .cke_button .cke_buttonarrow {
+/*.cke_skin_kama .cke_browser_ie6 .cke_button .cke_buttonarrow {
   filter: ;
-}
+}*/
 .cke_skin_kama .cke_browser_gecko .cke_toolbar,.cke_skin_kama .cke_browser_gecko .cke_button a,.cke_skin_kama .cke_browser_gecko .cke_button a.cke_off,.cke_skin_kama .cke_browser_gecko .cke_button .cke_icon,.cke_skin_kama .cke_browser_gecko .cke_button .cke_buttonarrow,.cke_skin_kama .cke_browser_gecko .cke_separator,.cke_skin_kama .cke_browser_gecko .cke_toolbar_start {
   display: block;
   float: left;
