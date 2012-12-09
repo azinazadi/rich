@@ -3,7 +3,15 @@ require 'mime/types'
 require 'kaminari'
 
 module Rich
-  class RichFile < ActiveRecord::Base
+  class RichFile
+    include Mongoid::Document
+    include Mongoid::Timestamps
+    include Mongoid::Paperclip
+    
+    field :owner_type
+    field :owner_id
+    field :uri_cache
+    field :simplified_type
 
     attr_accessible :rich_file_file_name, :rich_file_content_type, :rich_file_file_size, :rich_file_updated_at, :owner_type, :owner_id, :uri_cache, :simplified_type
 
@@ -12,9 +20,14 @@ module Rich
     
     paginates_per 34
     
-    has_attached_file :rich_file,
-                      :styles => Proc.new {|a| a.instance.set_styles },
-                      :convert_options => Proc.new { |a| Rich.convert_options[a] }
+    has_mongoid_attached_file :rich_file,
+      :path => "assets/images/:id/:style.:extension",
+      :styles => Proc.new {|a| a.instance.set_styles },
+      :convert_options => Proc.new { |a| Rich.convert_options[a] }
+      
+    # has_attached_file :rich_file,
+    #                   :styles => Proc.new {|a| a.instance.set_styles },
+    #                   :convert_options => Proc.new { |a| Rich.convert_options[a] }
     
     validates_attachment_presence :rich_file
     validate :check_content_type
