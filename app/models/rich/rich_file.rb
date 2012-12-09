@@ -16,8 +16,6 @@ module Rich
 
     attr_accessible :rich_file_file_name, :rich_file_content_type, :rich_file_file_size, :rich_file_updated_at, :owner_type, :owner_id, :uri_cache, :simplified_type
 
-    # scope :images, where("rich_rich_files.simplified_type = 'image'")
-    # scope :files, where("rich_rich_files.simplified_type = 'file'")
     scope :images, where(simplified_type: 'image')
     scope :files, where(simplified_type: 'file')
     
@@ -27,10 +25,6 @@ module Rich
       :path => "assets/images/:id/:style.:extension",
       :styles => Proc.new {|a| a.instance.set_styles },
       :convert_options => Proc.new { |a| Rich.convert_options[a] }
-      
-    # has_attached_file :rich_file,
-    #                   :styles => Proc.new {|a| a.instance.set_styles },
-    #                   :convert_options => Proc.new { |a| Rich.convert_options[a] }
     
     validates_attachment_presence :rich_file
     validate :check_content_type

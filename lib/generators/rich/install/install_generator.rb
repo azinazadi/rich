@@ -24,11 +24,6 @@ module Rich
       def install_javascript
         template 'rich.js', 'app/assets/javascripts/rich.js'
       end
-      # 
-      # No thanks :D
-      # def create_migrations
-      #   rake "rich:install:migrations"
-      # end
       
   end
  end
