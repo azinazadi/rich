@@ -27,6 +27,9 @@ module Rich
   mattr_accessor :default_style
   @@default_style = :thumb
   
+  mattr_accessor :paperclip_path
+  @@paperclip_path = "assets/images/:id/:style.:extension"
+  
   mattr_accessor :authentication_method
   @@authentication_method = :none
   
