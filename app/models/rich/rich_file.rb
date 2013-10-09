@@ -23,6 +23,7 @@ module Rich
     
     has_mongoid_attached_file :rich_file,
       :path => Rich.paperclip_path,
+      :url => Rich.paperclip_path,
       :styles => Proc.new {|a| a.instance.set_styles },
       :convert_options => Proc.new { |a| Rich.convert_options[a] }
     
