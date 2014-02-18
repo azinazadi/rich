@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 3.2.0"
   s.add_dependency "jquery-rails"
-  s.add_dependency "mongoid", "~> 3.1.5"
+  s.add_dependency "mongoid", ">= 3.1.5"
   s.add_dependency 'mongoid-paperclip'
   s.add_dependency "rack-raw-upload"
   s.add_dependency "sass-rails"
